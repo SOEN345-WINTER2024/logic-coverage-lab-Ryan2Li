@@ -5,7 +5,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 public class CheckItTest {
-
+    //a || (b && c)
     @Test
     public void testPredicate1() {
         final PrintStream originalOut = System.out;
@@ -81,7 +81,7 @@ public class CheckItTest {
         System.setOut(new PrintStream(outputStream));
 
 
-        CheckIt.checkIt(true, true, true);
+        CheckIt.checkIt(true, false, true);
 
 
         String printedOutput = outputStream.toString().trim();
@@ -98,7 +98,7 @@ public class CheckItTest {
         System.setOut(new PrintStream(outputStream));
 
 
-        CheckIt.checkIt(false, true, false);
+        CheckIt.checkIt(false, false, true);
 
 
         String printedOutput = outputStream.toString().trim();
@@ -115,7 +115,7 @@ public class CheckItTest {
         System.setOut(new PrintStream(outputStream));
 
 
-        CheckIt.checkIt(true, false, true);
+        CheckIt.checkIt(true, true, false);
 
 
         String printedOutput = outputStream.toString().trim();
@@ -132,7 +132,7 @@ public class CheckItTest {
         System.setOut(new PrintStream(outputStream));
 
 
-        CheckIt.checkIt(false, false, true);
+        CheckIt.checkIt(false, true, false);
 
 
         String printedOutput = outputStream.toString().trim();
